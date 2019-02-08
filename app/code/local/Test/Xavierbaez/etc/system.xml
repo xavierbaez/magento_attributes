@@ -1,0 +1,33 @@
+<config>
+	<sections>
+		<test_xavierbaez translate="label">
+            <label>Threshold</label>
+            <tab>advanced</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>910</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>		
+            <groups>
+                <options translate="label">
+                    <label>Threshold Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <threshold_value>
+                            <label>Threshold Value</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </threshold_value>
+                    </fields>
+                </options>
+            </groups>
+        </test_xavierbaez>
+	</sections>
+</config>
