@@ -3,11 +3,11 @@
  * User: Xavier
  * Date: 2019-02-055
  * Time: 16:06
- */ 
-/* @var $installer Mage_Core_Model_Resource_Setup */
-$installer = new Mage_Eav_Model_Entity_Setup('core_setup');
-$installer->startSetup();
-$installer->addAttribute('catalog_product',
+ */
+/* @var $this Mage_Core_Model_Resource_Setup */
+$this->startSetup();
+$this->addAttribute(
+    'catalog_product',
     'half_life',
     array(
         'group'           => 'General',
@@ -28,4 +28,4 @@ $installer->addAttribute('catalog_product',
         'default'         => 1000
     )
 );
-$installer->endSetup();
+$this->endSetup();

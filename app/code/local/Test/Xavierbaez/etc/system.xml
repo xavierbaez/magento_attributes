@@ -1,13 +1,19 @@
 <config>
-	<sections>
-		<test_xavierbaez translate="label">
+    <tabs>
+        <test_xavierbaez translate="label">
+            <label>Test Radioactive Settings</label>
+            <sort_order>900</sort_order>
+        </test_xavierbaez>
+    </tabs>
+    <sections>
+        <test_xavierbaez translate="label">
             <label>Threshold</label>
-            <tab>advanced</tab>
+            <tab>test_xavierbaez</tab>
             <frontend_type>text</frontend_type>
             <sort_order>910</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
-            <show_in_store>1</show_in_store>		
+            <show_in_store>1</show_in_store>
             <groups>
                 <options translate="label">
                     <label>Threshold Options</label>
@@ -29,5 +35,5 @@
                 </options>
             </groups>
         </test_xavierbaez>
-	</sections>
+    </sections>
 </config>

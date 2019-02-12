@@ -6,6 +6,8 @@
             <codePool>local</codePool>
             <depends>
                 <Mage_Eav/>
+                <Mage_Sales />
+                <Mage_Catalog />
             </depends>
         </Test_Xavierbaez>
     </modules>

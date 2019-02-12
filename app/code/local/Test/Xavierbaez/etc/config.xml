@@ -2,52 +2,36 @@
 <config>
     <modules>
         <Test_Xavierbaez>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Test_Xavierbaez>
     </modules>
-    <adminhtml>
-        <acl>
-            <resources>
-                <admin>
-                    <children>
-                        <system>
-                            <children>
-                                <config>
-                                    <children>
-                                        <test_xavierbaez>
-                                            <title>Threshold</title>
-                                        </test_xavierbaez>
-                                    </children>
-                                </config>
-                            </children>
-                        </system>
-                    </children>
-                </admin>
-            </resources>
-        </acl>
-    </adminhtml>
-    <blocks>
-        <adminhtml>
-            <rewrite>
-                <sales_order_grid>Test_Xavierbaez_Block_Adminhtml_Order_Grid</sales_order_grid>
-            </rewrite>
-        </adminhtml>
-    </blocks>
     <default>
         <test_xavierbaez>
             <threshold_value>1000</threshold_value>
         </test_xavierbaez>
     </default>
-    <global>
-        <blocks>
-            <adminhtml>
-                <rewrite>
-                    <sales_order_grid>Test_Xavierbaez_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
-                </rewrite>
-            </adminhtml>
-        </blocks>
+    <adminhtml>
         <events>
-            <sales_order_save_before>
+            <sales_order_grid_collection_load_before>
+                <observers>
+                    <test_xavierbaez>
+                        <model>test_xavierbaez/observer</model>
+                        <method>salesOrderGridCollectionLoadBefore</method>
+                    </test_xavierbaez>
+                </observers>
+            </sales_order_grid_collection_load_before>
+        </events>
+        <layout>
+            <updates>
+                <test_xavierbaez>
+                    <file>test/xavierbaez.xml</file>
+                </test_xavierbaez>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <events>
+            <checkout_submit_all_after>
                 <observers>
                     <test_xavierbaez_model_observer_save>
                         <type>singleton</type>
@@ -55,7 +39,7 @@
                         <method>checkRadioActive</method>
                     </test_xavierbaez_model_observer_save>
                 </observers>
-            </sales_order_save_before>
+            </checkout_submit_all_after>
         </events>
         <helpers>
             <test_xavierbaez>
@@ -70,6 +54,11 @@
             <test_xavierbaez_resource>
                 <class>Test_Xavierbaez_Model_Resource</class>
             </test_xavierbaez_resource>
+            <sales_resource>
+                <rewrite>
+                    <order_grid_collection>Test_Xavierbaez_Model_Resource_Sales_Order_Grid_Collection</order_grid_collection>
+                </rewrite>
+            </sales_resource>
         </models>
         <resources>
             <test_xavierbaez_setup>
